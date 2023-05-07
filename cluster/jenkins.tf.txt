@@ -1,0 +1,10 @@
+resource "helm_release" "jenkins_controller" {
+  name       = "devops-jenkins"
+  repository = "https://charts.jenkins.io/"
+  chart      = "jenkins"
+
+  values = [
+    "${file("values.yaml")}"
+  ]
+
+}

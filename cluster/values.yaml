@@ -1,0 +1,23 @@
+controller:
+  # Used for label app.kubernetes.io/component
+  componentName: "jenkins-controller"
+  image: "jenkins/jenkins"
+  # tag: "2.387.2-jdk11"
+  tagLabel: lts
+  imagePullPolicy: "Always"
+  numExecutors: 0
+  # configures the executor mode of the Jenkins node. Possible values are: NORMAL or EXCLUSIVE
+  executorMode: "NORMAL"
+  admin:
+    existingSecret: ""
+    userKey: jenkins-admin-user
+    passwordKey: jenkins-admin-password
+  installPlugins:
+    - configuration-as-code:1625.v27444588cc3d
+    - kubernetes:3923.v294a_d4250b_91
+    - git:5.0.0
+    - kubernetes-credentials-provider:1.211.vc236a_f5a_2f3c
+    - credentials:1224.vc23ca_a_9a_2cb_0
+
+    
+  JCasC:
