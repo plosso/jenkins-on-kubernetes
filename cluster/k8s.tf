@@ -15,7 +15,7 @@ resource "kubernetes_secret" "jenkins_admin_password" {
 
   data = {
     username = "admin"
-    password = "changeme"
+    password = "changemenow"
   }
 
 }
